@@ -1,0 +1,33 @@
+# configs/flat.yaml
+data:
+  dataset: "Imagenet-100class"
+  data_root: "/path/to/Imagenet-100class"
+  train_subdir: "train"
+  val_subdir: "val"
+  input_size: 224       # smaller is fine for flat models, adjust if needed
+
+training:
+  bs: 128               # per-GPU batch size
+  epochs: 150
+  lr: 0.0003
+  num_workers: 8
+  beta: 0.25
+  seed: 42
+
+model:
+  model_type: "EnhancedFlatVQVAE"
+  num_levels: 1
+  codebook_size: 1024
+  codebook_dim: 64
+  embed_dim: 64
+  latent_channel: 128
+  rotation_trick: true
+  kmeans_init: true
+  decay: 0.99
+  learnable_codebook: false
+  ema_update: true
+  threshold_dead: 2
+
+system:
+  run_dir: "./runs/flat"
+  torch_compile: false

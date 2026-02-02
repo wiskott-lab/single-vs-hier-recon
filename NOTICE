@@ -1,0 +1,5 @@
+Third-party software
+
+This project includes code from lucidrains/vector-quantize-pytorch by Phil Wang under vector_quantize_pytorch folder.
+License: MIT
+Source: https://github.com/lucidrains/vector-quantize-pytorch

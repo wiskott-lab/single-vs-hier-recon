@@ -1,0 +1,33 @@
+# configs/hier.yaml
+data:
+  dataset: "Imagenet-100class"
+  data_root: "/local/rathjjgf/datasets/Imagenet-100class"
+  train_subdir: "train"
+  val_subdir: "val"
+  input_size: 256       # hierarchical usually benefits from larger inputs
+
+training:
+  bs: 256               # per-GPU batch size (larger models need smaller bs)
+  epochs: 2
+  lr: 0.0003
+  num_workers: 4
+  beta: 0.25
+  seed: 42
+
+model:
+  model_type: "UnconditionedHVQVAE"
+  num_levels: 2
+  codebook_size: 1024
+  codebook_dim: 64
+  embed_dim: 64
+  latent_channel: 128
+  rotation_trick: false
+  kmeans_init: false
+  decay: 0.99
+  learnable_codebook: false
+  ema_update: true
+  threshold_dead: 2
+
+system:
+  run_dir: "./runs/hier"
+  torch_compile: false
