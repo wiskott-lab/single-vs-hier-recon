@@ -1,7 +1,7 @@
 # configs/flat.yaml
 data:
   dataset: "Imagenet-100class"
-  data_root: "/path/to/Imagenet-100class"
+  data_root: "PATH"
   train_subdir: "train"
   val_subdir: "val"
   input_size: 224       # smaller is fine for flat models, adjust if needed

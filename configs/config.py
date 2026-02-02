@@ -38,16 +38,6 @@ def _load_env():
     env_file = os.getenv("ENV_FILE")
     if env_file and os.path.exists(env_file):
         load_dotenv(dotenv_path=env_file, override=False)
-    else:
-        hostname = socket.gethostname().lower()
-        if any(x in hostname for x in ("gpu01", "gpu02", "gpu03")):
-            cluster_env = "envs/ini.env"
-        elif "juwels" in hostname:
-            cluster_env = "envs/juwels_booster.env"
-        if os.path.exists(cluster_env):
-            load_dotenv(dotenv_path=cluster_env, override=False)
-        elif os.path.exists(".env"):  # last fallback
-            load_dotenv(dotenv_path=".env", override=False)
 
 
 def _load_config_file() -> dict:

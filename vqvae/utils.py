@@ -7,17 +7,9 @@ import numpy as np
 import torch
 
 import vqvae.hierarchical.h_models as hierarchical_models
-# import vqvae.hierarchical.vanilla_hmodels as vanilla_hmodels
 import vqvae.flat.flat_models as flat_models
-# import vqvae.flat.vanilla_fmodels as vanilla_fmodels
-
-
 
 def initialize_model(params):
-    """
-    Dynamically locate the class named by params['model_type'] in any of the
-    known modules (hierarchical / flat, vanilla or enhanced), and instantiate it.
-    """
     model_type = params["model_type"]
     for module in (hierarchical_models, flat_models):
         if hasattr(module, model_type):

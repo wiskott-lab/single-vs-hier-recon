@@ -1,7 +1,7 @@
 # configs/hier.yaml
 data:
   dataset: "Imagenet-100class"
-  data_root: "/local/rathjjgf/datasets/Imagenet-100class"
+  data_root: "PATH"
   train_subdir: "train"
   val_subdir: "val"
   input_size: 256       # hierarchical usually benefits from larger inputs
